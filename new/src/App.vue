@@ -7,8 +7,30 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
+    <footer class="endfixed">
+      새로운 시도를 좋아하는 개발자 전다나 010.5763.6355 copyright by Donna:)
+    </footer>
   </div>
 </template>
+
+<script>
+export default {
+  name: "App",
+  computed: {
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -33,5 +55,16 @@
 
 #nav a.router-link-exact-active {
   color: #0492c2;
+}
+
+.endfixed {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 0;
+  background: #1a1818;
+  opacity: 0.7;
+  color: #fff;
 }
 </style>

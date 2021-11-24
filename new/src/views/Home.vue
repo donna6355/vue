@@ -128,10 +128,10 @@ export default {
 
 <style scoped>
 .intro {
-  max-width: 480px;
+  max-width: 400px;
+  width: 70%;
   margin: auto;
   padding: 80px 0;
-  width: 60%;
 }
 @keyframes logo {
   70% {
