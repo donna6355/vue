@@ -19,6 +19,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/flutter",
+    name: "Flutter",
+    component: () =>
+      import(/* webpackChunkName: "butler" */ "../views/Flutter.vue"),
+  },
+  {
+    path: "/rplay",
+    name: "Rplay",
+    component: () =>
+      import(/* webpackChunkName: "rplay" */ "../views/Rplay.vue"),
+  },
 ];
 
 const router = new VueRouter({
