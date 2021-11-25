@@ -123,6 +123,12 @@
 <script>
 export default {
   name: "Home",
+  props: {
+    isMobile: {
+      type: Boolean,
+      require: true,
+    },
+  },
 };
 </script>
 

@@ -6,7 +6,7 @@
       <router-link to="/flutter">Butler's Diary</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view />
+    <router-view class="routerContainer" :isMobile="isMobile" />
     <footer class="endfixed">
       새로운 시도를 좋아하는 개발자 전다나 010.5763.6355 copyright by Donna:)
     </footer>
@@ -66,5 +66,10 @@ export default {
   background: #1a1818;
   opacity: 0.7;
   color: #fff;
+}
+
+.routerContainer {
+  width: 70%;
+  margin: 0 auto;
 }
 </style>

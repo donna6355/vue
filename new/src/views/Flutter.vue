@@ -4,6 +4,12 @@
 <script>
 export default {
   name: "Flutter",
+  props: {
+    isMobile: {
+      type: Boolean,
+      require: true,
+    },
+  },
 };
 </script>
 <style scoped></style>
