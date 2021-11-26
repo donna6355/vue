@@ -7,7 +7,7 @@
     <h3>
       {{ title }}
     </h3>
-    <h4>stack</h4>
+    <h4>주요 기술 스택 :</h4>
     <ul>
       <li>details</li>
     </ul>

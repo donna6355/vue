@@ -56,6 +56,10 @@ export default {
 #nav a.router-link-exact-active {
   color: #0492c2;
 }
+ul,
+ol {
+  list-style: none;
+}
 
 .endfixed {
   position: absolute;
