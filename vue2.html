@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue2 try</title>
+    <link rel="stylesheet" href="./vue2.css">
+</head>
+
+<body>
+    <header>
+        <h1>Header : We are selling something!</h1>
+    </header>
+    <section>
+        <div id="app">
+            <div class="cart">
+                <p>cart({{cart.length}})</p>
+            </div>
+            <product :premium="premium" :best="best" @add-to-cart="updateCart" @remove-from-cart="removeCart"></product>
+            <review @review-submitted="receiveReview"></review>
+            <div v-for="each in review">
+                <span>User : {{each.name}}</span>
+                <span>Rating : {{each.rating}}</span>
+                <span>Review : {{each.review}}</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        THis is footer
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
