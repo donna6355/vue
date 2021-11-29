@@ -1,21 +1,50 @@
 <template>
-  <div class="container">
-    <hooper class="imgSlide" :infiniteScroll="true">
-      <slide> slide 1 </slide>
-      <slide> slide 2 </slide>
+  <div
+    class="cont"
+    :style="{ display: !isMobile && mode == 'vertical' ? 'flex' : 'block' }"
+  >
+    <hooper
+      class="imgSlide"
+      :style="{ width: !isMobile && mode == 'vertical' ? '375px' : '100%' }"
+      :infiniteScroll="true"
+      :wheelControl="false"
+    >
+      <slide v-for="img in imgs" :key="img"
+        ><img
+          :src="require(`@/assets/${img}`)"
+          alt="img"
+          style="width: 100%; object-fit: contain"
+      /></slide>
+      <hooper-navigation slot="hooper-addons"></hooper-navigation>
     </hooper>
-    <h3>
-      {{ title }}
-    </h3>
-    <h4>주요 기술 스택 :</h4>
-    <ul>
-      <li>details</li>
-    </ul>
+    <div>
+      <div class="flexRow">
+        <div style="width: 60px; height: 60px" class="center">
+          <img
+            :src="require(`@/assets/${img}`)"
+            alt="img"
+            style="width: 100%; object-fit: contain"
+          />
+        </div>
+        <h3 style="margin-left: 8px">
+          {{ title }}
+        </h3>
+      </div>
+      <h5>{{ period }}</h5>
+      <a :href="url" target="_blank">{{ url }}</a>
+      <h4>주요 기술 스택</h4>
+      <ul>
+        <li>details</li>
+        <li>details</li>
+        <li>details</li>
+        <li>details</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import { Hooper, Slide } from "hooper";
+import { Hooper, Slide, Navigation as HooperNavigation } from "hooper";
 import "hooper/dist/hooper.css";
 
 export default {
@@ -23,8 +52,13 @@ export default {
   components: {
     Hooper,
     Slide,
+    HooperNavigation,
   },
   props: {
+    mode: {
+      type: String,
+      require: true,
+    },
     isMobile: {
       type: Boolean,
       require: true,
@@ -37,20 +71,41 @@ export default {
       type: String,
       require: true,
     },
-    // imgs: {
-    //   type: Array,
-    //   require: true,
-    // },
+    period: {
+      type: String,
+      require: true,
+    },
+    url: {
+      type: String,
+      require: true,
+    },
+    img: {
+      type: String,
+      require: true,
+    },
+    imgs: {
+      type: Array,
+      require: true,
+    },
     // details: {
     //   type: Array,
     //   require: true,
     // },
   },
+  computed: {
+    howToAlign() {
+      return this.isMobile && this.mode !== "vertical"
+        ? null
+        : "display:flex;flex-flow: row wrap;";
+    },
+  },
 };
 </script>
 <style scoped>
+.cont {
+  text-align: left;
+}
 .imgSlide {
-  width: 500px;
   margin: 0 auto;
   background: skyblue;
 }

@@ -39,6 +39,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: auto;
 }
 
 #nav {
@@ -70,6 +71,17 @@ ol {
   background: #1a1818;
   opacity: 0.7;
   color: #fff;
+}
+
+.flexRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: center;
+}
+.center {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
 }
 
 .routerContainer {
