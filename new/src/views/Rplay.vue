@@ -24,7 +24,13 @@ export default {
   },
   data() {
     return {
-      imgs: ["rplay_1.png", "rplay_2.png"],
+      imgs: [
+        "rplay_1.png",
+        "rplay_2.png",
+        "rplay_3.png",
+        "rplay_4.png",
+        "rplay_5.png",
+      ],
     };
   },
 };

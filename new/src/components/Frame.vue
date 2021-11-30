@@ -1,11 +1,11 @@
 <template>
-  <div
-    class="cont"
-    :style="{ display: !isMobile && mode == 'vertical' ? 'flex' : 'block' }"
-  >
+  <div class="cont" :style="{ display: !isMobile ? 'flex' : 'block' }">
     <hooper
       class="imgSlide"
-      :style="{ width: !isMobile && mode == 'vertical' ? '375px' : '100%' }"
+      :style="{
+        width: !isMobile ? (mode == 'vertical' ? '277px' : '50%') : '100%',
+        'margin-right': !isMobile ? '24px' : '0',
+      }"
       :infiniteScroll="true"
       :wheelControl="false"
     >
@@ -13,11 +13,12 @@
         ><img
           :src="require(`@/assets/${img}`)"
           alt="img"
-          style="width: 100%; object-fit: contain"
+          style="display: block; width: 100%; object-fit: contain"
       /></slide>
       <hooper-navigation slot="hooper-addons"></hooper-navigation>
+      <HooperPagination slot="hooper-addons"></HooperPagination>
     </hooper>
-    <div>
+    <div style="text-align: left">
       <div class="flexRow">
         <div style="width: 60px; height: 60px" class="center">
           <img
@@ -44,7 +45,12 @@
 </template>
 
 <script>
-import { Hooper, Slide, Navigation as HooperNavigation } from "hooper";
+import {
+  Hooper,
+  Slide,
+  Navigation as HooperNavigation,
+  Pagination as HooperPagination,
+} from "hooper";
 import "hooper/dist/hooper.css";
 
 export default {
@@ -53,6 +59,7 @@ export default {
     Hooper,
     Slide,
     HooperNavigation,
+    HooperPagination,
   },
   props: {
     mode: {
@@ -103,10 +110,12 @@ export default {
 </script>
 <style scoped>
 .cont {
-  text-align: left;
+  flex-flow: row wrap;
+  justify-content: start;
 }
 .imgSlide {
-  margin: 0 auto;
-  background: skyblue;
+  border: 1px solid gray;
+  border-radius: 16px;
+  overflow: hidden;
 }
 </style>
