@@ -113,9 +113,27 @@
       </svg>
     </div>
     <div>
-      this is home page <br />
-      introduction for 4 lines.<br />
-      stack - javascript,css,html,vue,flutter,dart
+      안녕하세요:) <br />
+      새로운 시도를 좋아하는 개발자<br />
+      UX를 먼저 생각하는 개발자<br />
+      꼼꼼함<br />
+      <br />
+      전다나입니다. <br />
+    </div>
+    <div>
+      <h5>저는 이런 기술들을 사용합니다.</h5>
+      <!-- <img src="../assets/sk1.png" alt="html" />
+      <img src="../assets/sk2.png" alt="javascript" />
+      <img src="../assets/sk3.png" alt="css" /> -->
+      <img src="../assets/skill.png" alt="htmlcssjs" style="width: 160px" />
+      <img src="../assets/vuejs.png" alt="vuejs" />
+      <img src="../assets/nodejs.png" alt="nodejs" />
+      <img src="../assets/mongo.png" alt="mongodb" />
+      <img src="../assets/dart.png" alt="dart" />
+      <img src="../assets/flutter.png" alt="flutter" /><br />
+      <img src="../assets/sk4.png" alt="photoshop" />
+      <img src="../assets/sk5.png" alt="illustrator" />
+      <img src="../assets/sk6.png" alt="XD" />
     </div>
   </div>
 </template>
