@@ -113,10 +113,11 @@
       </svg>
     </div>
     <div>
-      안녕하세요:) <br />
+      안녕하세요.<br />
+      <br />
       새로운 시도를 좋아하는 개발자<br />
       UX를 먼저 생각하는 개발자<br />
-      꼼꼼함<br />
+      꼼꼼한 개발자<br />
       <br />
       전다나입니다. <br />
     </div>
@@ -128,9 +129,11 @@
       <img src="../assets/skill.png" alt="htmlcssjs" style="width: 160px" />
       <img src="../assets/vuejs.png" alt="vuejs" />
       <img src="../assets/nodejs.png" alt="nodejs" />
-      <img src="../assets/mongo.png" alt="mongodb" />
+      <img src="../assets/mongo.png" alt="mongodb" /><br />
       <img src="../assets/dart.png" alt="dart" />
-      <img src="../assets/flutter.png" alt="flutter" /><br />
+      <img src="../assets/flutter.png" alt="flutter" />
+      <img src="../assets/git.png" alt="git" style="height: 32px" />
+      <br />
       <img src="../assets/sk4.png" alt="photoshop" />
       <img src="../assets/sk5.png" alt="illustrator" />
       <img src="../assets/sk6.png" alt="XD" />
