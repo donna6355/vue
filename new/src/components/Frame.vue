@@ -3,7 +3,7 @@
     <hooper
       class="imgSlide"
       :style="{
-        width: !isMobile ? (mode == 'vertical' ? '277px' : '50%') : '100%',
+        width: !isMobile ? (mode == 'vertical' ? '277px' : '60%') : '100%',
         'margin-right': !isMobile ? '24px' : '0',
       }"
       :infiniteScroll="true"

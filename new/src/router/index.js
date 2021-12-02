@@ -20,16 +20,10 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/flutter",
-    name: "Flutter",
+    path: "/project",
+    name: "Project",
     component: () =>
-      import(/* webpackChunkName: "butler" */ "../views/Flutter.vue"),
-  },
-  {
-    path: "/rplay",
-    name: "Rplay",
-    component: () =>
-      import(/* webpackChunkName: "rplay" */ "../views/Rplay.vue"),
+      import(/* webpackChunkName: "rplay" */ "../views/Project.vue"),
   },
 ];
 

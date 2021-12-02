@@ -1,12 +1,19 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/rplay">Rplay</router-link> |
-      <router-link to="/flutter">Butler's Diary</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/" :style="fontSizeMob">Donna's Home</router-link>
+      |
+      <router-link to="/project" :style="fontSizeMob">Project</router-link>
+      |
+      <router-link to="/about" :style="fontSizeMob">About</router-link>
     </div>
-    <router-view class="routerContainer" :isMobile="isMobile" />
+    <router-view
+      :isMobile="isMobile"
+      :style="{
+        width: isMobile ? '100%' : '70%',
+        margin: isMobile ? '80px auto 0' : '120px auto 0',
+      }"
+    />
   </div>
 </template>
 
@@ -14,6 +21,11 @@
 export default {
   name: "App",
   computed: {
+    fontSizeMob() {
+      return {
+        "font-size": this.isMobile ? "16px" : "20px",
+      };
+    },
     isMobile() {
       if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -31,43 +43,38 @@ export default {
 
 <style>
 #app {
+  width: 100%;
+  margin: 0 auto;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: auto;
 }
 
 #nav {
-  padding: 30px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 16px;
+  color: #2e2e2c;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #nav a {
   padding: 0 8px;
   text-decoration: none;
-  font-size: 20px;
   font-weight: bold;
-  color: #2c3e50;
+  color: #2e2e2c;
 }
 
 #nav a.router-link-exact-active {
-  color: #0492c2;
+  color: #fff;
 }
 ul,
 ol {
   list-style: none;
-}
-
-.endfixed {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 16px 0;
-  background: #1a1818;
-  opacity: 0.7;
-  color: #fff;
 }
 
 .flexRow {
@@ -82,7 +89,6 @@ ol {
 }
 
 .routerContainer {
-  width: 70%;
-  margin: 0 auto;
+  margin: 120px auto 0;
 }
 </style>

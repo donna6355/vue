@@ -112,30 +112,27 @@
         </g>
       </svg>
     </div>
-    <div>
+    <div class="introtext">
       안녕하세요.<br />
       <br />
       새로운 시도를 좋아하는 개발자<br />
-      UX를 먼저 생각하는 개발자<br />
+      UX를 고민하는 개발자<br />
       꼼꼼한 개발자<br />
       <br />
       전다나입니다. <br />
     </div>
-    <div>
-      <h5>저는 이런 기술들을 사용합니다.</h5>
-      <!-- <img src="../assets/sk1.png" alt="html" />
-      <img src="../assets/sk2.png" alt="javascript" />
-      <img src="../assets/sk3.png" alt="css" /> -->
+    <div style="margin-top: 36px">
       <img src="../assets/skill.png" alt="htmlcssjs" style="width: 160px" />
       <img src="../assets/vuejs.png" alt="vuejs" />
       <img src="../assets/nodejs.png" alt="nodejs" />
       <img src="../assets/mongo.png" alt="mongodb" /><br />
       <img src="../assets/dart.png" alt="dart" />
       <img src="../assets/flutter.png" alt="flutter" />
-      <img src="../assets/git.png" alt="git" style="height: 32px" />
-      <br />
+      <img src="../assets/git.png" alt="git" />
+      <br v-if="isMobile" />
+      <!-- <br /> -->
       <img src="../assets/sk4.png" alt="photoshop" />
-      <img src="../assets/sk5.png" alt="illustrator" />
+      <img src="../assets/sk5.png" alt="illustrator" style="margin: 4px 8px" />
       <img src="../assets/sk6.png" alt="XD" />
     </div>
   </div>
@@ -154,6 +151,9 @@ export default {
 </script>
 
 <style scoped>
+img {
+  margin: 4px 0;
+}
 .intro {
   max-width: 400px;
   width: 70%;
@@ -197,7 +197,11 @@ export default {
     opacity: 0.3;
   }
 }
-
+.introtext {
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 700;
+}
 .intro svg #fullSig > path {
   fill: transparent;
   animation: logo 1.5s forwards linear;
