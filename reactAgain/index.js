@@ -26,7 +26,7 @@ mongoose
 // mongodb+srv://donna:toel3173^^@reacttrial.9wq2g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! Welcome");
 });
 
 app.post("/register", (req, res) => {
