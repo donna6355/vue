@@ -5,25 +5,21 @@ const port = 5000;
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { User } = require("./models/user");
+const config = require("./config/key");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 mongoose
-  .connect(
-    "mongodb+srv://donna:toel3173^^@reacttrial.9wq2g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("mongoose connected");
   })
   .catch(() => {
     console.log("mongoose failed");
   });
-
-// mongodb+srv://donna:toel3173^^@reacttrial.9wq2g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 app.get("/", (req, res) => {
   res.send("Hello World! Welcome");
