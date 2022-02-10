@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const { User } = require("./models/user");
 const config = require("./config/key");
+const { auth } = require("./middleware/auth");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -49,6 +50,14 @@ app.post("/login", (req, res) => {
           .json({ loginSuccess: true, userId: user._id });
       });
     });
+  });
+});
+
+app.get("/auth", auth, (req, res) => {
+  res.status(200).json({
+    _id: req.user._id,
+    email: req.user.email,
+    name: req.user.name,
   });
 });
 

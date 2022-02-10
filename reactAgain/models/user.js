@@ -66,6 +66,16 @@ UserSchema.methods.generateToken = function (cb) {
   });
 };
 
+UserSchema.statics.findByToken = function (token, cb) {
+  var user = this;
+  jwt.verify(token, "Isaac", (err, decode) => {
+    user.findOne({ _id: decode, token: token }, (err, user) => {
+      if (err) return cb(err);
+      cb(null, user);
+    });
+  });
+};
+
 const User = mongoose.model("user", UserSchema);
 
 module.exports = { User };
