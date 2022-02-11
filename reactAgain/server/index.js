@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const { User } = require("./models/user");
-const config = require("./config/key");
+const config = require("./server/config/key");
 const { auth } = require("./middleware/auth");
 
 app.use(bodyParser.urlencoded({ extended: true }));
