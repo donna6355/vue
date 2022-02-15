@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { loginUser } from "../../../_actions/user_action";
 
-function LoginPage() {
+function LoginPage(props) {
   const dispatch = useDispatch();
-  const { email, setEmail } = useState("");
-  const { password, setPassword } = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const onEmailChange = (evt) => {
     setEmail(evt.currentTarget.text);
   };
@@ -17,12 +18,18 @@ function LoginPage() {
       email: email,
       password: password,
     };
-    dispatch(loginUser(body));
+    dispatch(loginUser(body)).then((res) => {
+      if (res.payload.loginSuccess) {
+        props.history.push("/");
+      } else {
+        alert("Error");
+      }
+    });
   };
   return (
     <div>
       <form className="column" onSubmit={onSubmitHandler}>
-        <label for="email">E-mail</label>
+        <label>E-mail</label>
         <input
           id="email"
           name="email"
@@ -30,9 +37,7 @@ function LoginPage() {
           value={email}
           onChange={onEmailChange}
         ></input>
-        <label style={{ marginTop: 20 }} for="password">
-          Password
-        </label>
+        <label style={{ marginTop: 20 }}>Password</label>
         <input
           type="password"
           id="password"
