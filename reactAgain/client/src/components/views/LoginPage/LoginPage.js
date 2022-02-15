@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 
@@ -6,6 +7,7 @@ function LoginPage(props) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const onEmailChange = (evt) => {
     setEmail(evt.currentTarget.text);
   };
@@ -20,7 +22,8 @@ function LoginPage(props) {
     };
     dispatch(loginUser(body)).then((res) => {
       if (res.payload.loginSuccess) {
-        props.history.push("/");
+        navigate("/");
+        // props.history.push("/");
       } else {
         alert("Error");
       }
