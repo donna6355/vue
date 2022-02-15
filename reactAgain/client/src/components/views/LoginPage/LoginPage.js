@@ -9,10 +9,10 @@ function LoginPage(props) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const onEmailChange = (evt) => {
-    setEmail(evt.currentTarget.text);
+    setEmail(evt.target.value);
   };
   const onPwChange = (evt) => {
-    setPassword(evt.currentTarget.text);
+    setPassword(evt.target.value);
   };
   const onSubmitHandler = (evt) => {
     evt.preventDefault();
