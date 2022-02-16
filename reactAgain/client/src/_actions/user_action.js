@@ -9,3 +9,13 @@ export function loginUser(dataToSubmit) {
     payload: request,
   };
 }
+
+export function registerUser(dataToSubmit) {
+  const request = axios
+    .post("/api/register", dataToSubmit)
+    .then((res) => res.data);
+  return {
+    type: "REGISTER_USER",
+    payload: request,
+  };
+}
