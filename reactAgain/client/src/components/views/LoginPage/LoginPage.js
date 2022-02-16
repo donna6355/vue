@@ -32,7 +32,7 @@ function LoginPage(props) {
   return (
     <div>
       <form className="column" onSubmit={onSubmitHandler}>
-        <label>E-mail</label>
+        <label htmlFor="email">E-mail</label>
         <input
           id="email"
           name="email"
@@ -40,7 +40,9 @@ function LoginPage(props) {
           value={email}
           onChange={onEmailChange}
         ></input>
-        <label style={{ marginTop: 20 }}>Password</label>
+        <label htmlFor="password" style={{ marginTop: 20 }}>
+          Password
+        </label>
         <input
           type="password"
           id="password"
