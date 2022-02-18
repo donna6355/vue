@@ -19,3 +19,10 @@ export function registerUser(dataToSubmit) {
     payload: request,
   };
 }
+export function auth() {
+  const request = axios.get("/api/auth").then((res) => res.data);
+  return {
+    type: "AUTH_USER",
+    payload: request,
+  };
+}
