@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { auth } from "../_actions/user_action";
 // import { useNavigate } from "react-router-dom";
 
-export default function AUTH(specificComponent, option, adminRoute = null) {
+const AUTH = (specificComponent, option, adminRoute = null) => {
   //null anyone
   //true login user
   //false before login
@@ -22,4 +22,6 @@ export default function AUTH(specificComponent, option, adminRoute = null) {
     });
   });
   return specificComponent;
-}
+};
+
+export default AUTH;
